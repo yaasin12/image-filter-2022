@@ -32,7 +32,7 @@ import {Router, Request, Response} from 'express';
   app.get('/filteredimage', async (req, res) => {
     const image_url = req.query.image_url.toString();
     if (!image_url) {
-      res.status(400).send('Image Url not specified!');
+      res.status(404).send('Image Url not specified!');
     }
 
     const filtered_image = await filterImageFromURL(image_url);
@@ -42,6 +42,7 @@ import {Router, Request, Response} from 'express';
     });
    
   });
+  
   //! END @TODO1
   
   // Root Endpoint
