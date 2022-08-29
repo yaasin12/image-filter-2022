@@ -30,7 +30,7 @@ import {Router, Request, Response} from 'express';
 
   /**************************************************************************** */
   app.get('/filteredimage', async (req, res) => {
-    const image_url = req.query.image_url();
+    const image_url = req.query.image_url.toString();
     if (!image_url) {
       res.status(400).send('Image Url not specified!');
     }
